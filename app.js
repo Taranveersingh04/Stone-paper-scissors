@@ -18,17 +18,17 @@ const draw=()=>{
     message.style.backgroundColor="#081b31";
 
 }
-const showWinner=(userWin)=>{
+const showWinner=(userWin,compuChoice)=>{
     if(userWin){
         userScore++;
         users.innerText=userScore;
-        message.innerText="You Win";
+        message.innerText=`You Win, computer selected ${compuChoice}`;
         message.style.backgroundColor="green";
     }
     else{
         computerScore++;
         computers.innerText=computerScore;
-        message.innerText="You Lose";
+        message.innerText=`You Lose, computer selected ${compuChoice}`;
         message.style.backgroundColor="red";
     }
 }
@@ -50,7 +50,7 @@ const playGame=(choice)=>{
     else{
        userWin=compuChoice==="rock"?false:true;
     }
-    showWinner(userWin);
+    showWinner(userWin,compuChoice);
 }
 }
 choices.forEach((choice)=>{
